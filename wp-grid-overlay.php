@@ -26,6 +26,7 @@ define( 'WPGO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPGO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 require_once WPGO_PLUGIN_DIR . 'includes/class-wpgo-settings-page.php';
+require_once WPGO_PLUGIN_DIR . 'includes/class-wpgo-overlay.php';
 
 /**
  * Load the plugin text domain.
@@ -40,3 +41,4 @@ function wpgo_load_textdomain() {
 add_action( 'plugins_loaded', 'wpgo_load_textdomain' );
 
 WPGO_Settings_Page::init();
+WPGO_Overlay::init();
