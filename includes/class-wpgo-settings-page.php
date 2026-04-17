@@ -287,7 +287,7 @@ class WPGO_Settings_Page {
 	 *
 	 * @return array
 	 */
-	private static function get_settings() {
+	public static function get_settings() {
 		$settings = get_option( self::OPTION_NAME, array() );
 		$settings = is_array( $settings ) ? $settings : array();
 		$settings = array_replace_recursive( self::get_default_settings(), $settings );

@@ -1,0 +1,56 @@
+.wpgo-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 2147483647;
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	padding-right: var(--wpgo-desktop-spacing);
+	padding-left: var(--wpgo-desktop-spacing);
+	pointer-events: none;
+}
+
+.wpgo-overlay__grid {
+	--wpgo-columns: var(--wpgo-desktop-columns);
+	--wpgo-gap: var(--wpgo-desktop-gap);
+	--wpgo-column-width: calc((100% - ((var(--wpgo-columns) - 1) * var(--wpgo-gap))) / var(--wpgo-columns));
+
+	width: 100%;
+	max-width: var(--wpgo-desktop-container);
+	min-height: 100vh;
+	background-image: repeating-linear-gradient(
+		to right,
+		var(--wpgo-overlay-fill) 0,
+		var(--wpgo-overlay-fill) var(--wpgo-column-width),
+		transparent var(--wpgo-column-width),
+		transparent calc(var(--wpgo-column-width) + var(--wpgo-gap))
+	);
+}
+
+@media only screen and (max-width: 479px) {
+	.wpgo-overlay {
+		padding-right: var(--wpgo-mobile-spacing);
+		padding-left: var(--wpgo-mobile-spacing);
+	}
+
+	.wpgo-overlay__grid {
+		--wpgo-columns: var(--wpgo-mobile-columns);
+		--wpgo-gap: var(--wpgo-mobile-gap);
+
+		max-width: none;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+	.wpgo-overlay {
+		padding-right: var(--wpgo-tablet-spacing);
+		padding-left: var(--wpgo-tablet-spacing);
+	}
+
+	.wpgo-overlay__grid {
+		--wpgo-columns: var(--wpgo-tablet-columns);
+		--wpgo-gap: var(--wpgo-tablet-gap);
+
+		max-width: none;
+	}
+}
