@@ -2,6 +2,7 @@
 .git/
 .github/
 .gitignore
+.distignore
 
 # Codex and AI-agent development files.
 .codex-plugin/
@@ -17,6 +18,7 @@ node_modules/
 
 # Local editor and OS files.
 .DS_Store
+.gitkeep
 .idea/
 .vscode/
 *.log
