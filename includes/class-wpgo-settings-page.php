@@ -364,6 +364,11 @@ class WPGO_Settings_Page {
 				'min'   => 0,
 				'step'  => 1,
 			),
+			'spacing' => array(
+				'label' => __( 'Spacing zijkanten', 'wp-grid-overlay' ),
+				'min'   => 0,
+				'step'  => 1,
+			),
 		);
 
 		if ( 'desktop' === $group_key ) {
