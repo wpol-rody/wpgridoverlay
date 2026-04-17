@@ -122,7 +122,7 @@ class WPGO_Settings_Page {
 				'wp-grid-overlay'
 			);
 
-			foreach ( self::get_number_fields() as $field_key => $field ) {
+			foreach ( self::get_number_fields( $group_key ) as $field_key => $field ) {
 				add_settings_field(
 					$group_key . '_' . $field_key,
 					esc_html( $field['label'] ),
@@ -163,7 +163,7 @@ class WPGO_Settings_Page {
 		}
 
 		foreach ( self::get_groups() as $group_key => $group_label ) {
-			foreach ( self::get_number_fields() as $field_key => $field ) {
+			foreach ( self::get_number_fields( $group_key ) as $field_key => $field ) {
 				$value = isset( $input[ $group_key ][ $field_key ] ) ? absint( $input[ $group_key ][ $field_key ] ) : $output[ $group_key ][ $field_key ];
 
 				if ( $value < $field['min'] ) {
@@ -290,8 +290,13 @@ class WPGO_Settings_Page {
 	private static function get_settings() {
 		$settings = get_option( self::OPTION_NAME, array() );
 		$settings = is_array( $settings ) ? $settings : array();
+		$settings = array_replace_recursive( self::get_default_settings(), $settings );
 
-		return array_replace_recursive( self::get_default_settings(), $settings );
+		if ( empty( $settings['desktop']['container_width'] ) ) {
+			$settings['desktop']['container_width'] = self::get_desktop_container_width_default();
+		}
+
+		return $settings;
 	}
 
 	/**
@@ -309,12 +314,23 @@ class WPGO_Settings_Page {
 		foreach ( self::get_groups() as $group_key => $group_label ) {
 			$settings[ $group_key ] = array();
 
-			foreach ( self::get_number_fields() as $field_key => $field ) {
+			foreach ( self::get_number_fields( $group_key ) as $field_key => $field ) {
 				$settings[ $group_key ][ $field_key ] = $field['min'];
 			}
 		}
 
+		$settings['desktop']['container_width'] = self::get_desktop_container_width_default();
+
 		return $settings;
+	}
+
+	/**
+	 * Get the default desktop container width.
+	 *
+	 * @return int
+	 */
+	private static function get_desktop_container_width_default() {
+		return 1170;
 	}
 
 	/**
@@ -333,25 +349,36 @@ class WPGO_Settings_Page {
 	/**
 	 * Get number fields shown for each responsive group.
 	 *
+	 * @param string $group_key Responsive group key.
 	 * @return array
 	 */
-	private static function get_number_fields() {
-		return array(
-			'container_width' => array(
-				'label' => __( 'Breedte container', 'wp-grid-overlay' ),
-				'min'   => 0,
-				'step'  => 1,
-			),
-			'columns'         => array(
+	private static function get_number_fields( $group_key ) {
+		$fields = array(
+			'columns' => array(
 				'label' => __( 'Aantal banen', 'wp-grid-overlay' ),
 				'min'   => 1,
 				'step'  => 1,
 			),
-			'gap'             => array(
+			'gap'     => array(
 				'label' => __( 'Gap', 'wp-grid-overlay' ),
 				'min'   => 0,
 				'step'  => 1,
 			),
 		);
+
+		if ( 'desktop' === $group_key ) {
+			return array_merge(
+				array(
+					'container_width' => array(
+						'label' => __( 'Breedte container', 'wp-grid-overlay' ),
+						'min'   => 0,
+						'step'  => 1,
+					),
+				),
+				$fields
+			);
+		}
+
+		return $fields;
 	}
 }
