@@ -1,0 +1,15 @@
+/vendor/
+/node_modules/
+
+composer.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+.DS_Store
+.idea/
+.vscode/
+
+*.log
+*.tmp
+*.cache
