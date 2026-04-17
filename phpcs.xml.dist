@@ -23,13 +23,18 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="wp-grid-overlay"/>
+			<property name="text_domain" type="array">
+				<element value="wp-grid-overlay"/>
+			</property>
 		</properties>
 	</rule>
 
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="wpgo,WPGO"/>
+			<property name="prefixes" type="array">
+				<element value="wpgo"/>
+				<element value="WPGO"/>
+			</property>
 		</properties>
 	</rule>
 </ruleset>
