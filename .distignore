@@ -1,0 +1,27 @@
+# Git and repository metadata.
+.git/
+.github/
+.gitignore
+
+# Codex and AI-agent development files.
+.codex-plugin/
+skills/
+AGENTS.md
+
+# Development tooling.
+composer.json
+composer.lock
+phpcs.xml.dist
+vendor/
+node_modules/
+
+# Local editor and OS files.
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.tmp
+*.cache
+
+# Project-only documentation.
+README.md
