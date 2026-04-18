@@ -41,8 +41,8 @@ class WPGO_Settings_Page {
 	 */
 	public static function add_options_page() {
 		add_options_page(
-			__( 'Grid Overlay', 'grid-overlay' ),
-			__( 'Grid Overlay', 'grid-overlay' ),
+			__( 'Grid Overlay for WP', 'grid-overlay' ),
+			__( 'Grid Overlay for WP', 'grid-overlay' ),
 			'manage_options',
 			'grid-overlay',
 			array( __CLASS__, 'render_page' )
@@ -186,7 +186,7 @@ class WPGO_Settings_Page {
 		}
 		?>
 		<div class="wrap wpgo-settings">
-			<h1><?php echo esc_html__( 'Grid Overlay', 'grid-overlay' ); ?></h1>
+			<h1><?php echo esc_html__( 'Grid Overlay for WP', 'grid-overlay' ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( self::OPTION_GROUP );

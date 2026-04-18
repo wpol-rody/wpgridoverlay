@@ -1,9 +1,9 @@
 ---
 name: grid-overlay
-description: Build, modify, review, and debug the Grid Overlay WordPress plugin using official WordPress Coding Standards and Plugin Handbook best practices. Use when Codex is asked to work on the local `plugins/grid-overlay` plugin, generate WordPress-native PHP/CSS/JS, add admin or front-end overlay behavior, inspect hooks/enqueues/settings, create relevant tooling such as composer.json or phpcs.xml.dist, or verify plugin quality without touching unrelated WordPress core or theme files.
+description: Build, modify, review, and debug the Grid Overlay for WP WordPress plugin using official WordPress Coding Standards and Plugin Handbook best practices. Use when Codex is asked to work on the local `plugins/grid-overlay` plugin, generate WordPress-native PHP/CSS/JS, add admin or front-end overlay behavior, inspect hooks/enqueues/settings, create relevant tooling such as composer.json or phpcs.xml.dist, or verify plugin quality without touching unrelated WordPress core or theme files.
 ---
 
-# Grid Overlay
+# Grid Overlay for WP
 
 ## Overview
 
@@ -105,7 +105,7 @@ Requirements:
 
 For this plugin, replace example values with:
 
-- Plugin name: `Grid Overlay`
+- Plugin name: `Grid Overlay for WP`
 - Plugin slug and text domain: `grid-overlay`
 - Function prefix: `wpgo_`
 - Class prefix: `WPGO_`

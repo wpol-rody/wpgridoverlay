@@ -1,4 +1,4 @@
-=== Grid Overlay ===
+=== Grid Overlay for WP ===
 Contributors: rodyvdkar
 Tags: development, developer-tools, grid, layout, responsive
 Requires at least: 6.0
@@ -12,7 +12,7 @@ Adds a responsive grid overlay to help check WordPress layouts during developmen
 
 == Description ==
 
-Grid Overlay adds a front-end grid overlay that helps developers and site builders check responsive layout alignment while working on WordPress sites.
+Grid Overlay for WP adds a front-end grid overlay that helps developers and site builders check responsive layout alignment while working on WordPress sites.
 
 The plugin includes a settings page under Settings where administrators can configure:
 
@@ -30,7 +30,7 @@ Tablet settings apply from 480px through 1024px. Mobile settings apply up to 479
 
 1. Upload the plugin files to the `/wp-content/plugins/grid-overlay/` directory, or install the plugin through the WordPress plugins screen.
 2. Activate the plugin through the Plugins screen in WordPress.
-3. Go to Settings > Grid Overlay to configure the overlay.
+3. Go to Settings > Grid Overlay for WP to configure the overlay.
 
 == Frequently Asked Questions ==
 
