@@ -1,28 +1,28 @@
 ---
-name: wp-grid-overlay
-description: Build, modify, review, and debug the WP Grid Overlay WordPress plugin using official WordPress Coding Standards and Plugin Handbook best practices. Use when Codex is asked to work on the local `plugins/wp-grid-overlay` plugin, generate WordPress-native PHP/CSS/JS, add admin or front-end overlay behavior, inspect hooks/enqueues/settings, create relevant tooling such as composer.json or phpcs.xml.dist, or verify plugin quality without touching unrelated WordPress core or theme files.
+name: grid-overlay
+description: Build, modify, review, and debug the Grid Overlay WordPress plugin using official WordPress Coding Standards and Plugin Handbook best practices. Use when Codex is asked to work on the local `plugins/grid-overlay` plugin, generate WordPress-native PHP/CSS/JS, add admin or front-end overlay behavior, inspect hooks/enqueues/settings, create relevant tooling such as composer.json or phpcs.xml.dist, or verify plugin quality without touching unrelated WordPress core or theme files.
 ---
 
-# WP Grid Overlay
+# Grid Overlay
 
 ## Overview
 
-Use this skill to build maintainable, secure, WordPress-native plugin code for `wp-content/plugins/wp-grid-overlay`. Treat WordPress core, themes, uploads, and other plugins as read-only context unless the user explicitly asks to change them.
+Use this skill to build maintainable, secure, WordPress-native plugin code for `wp-content/plugins/grid-overlay`. Treat WordPress core, themes, uploads, and other plugins as read-only context unless the user explicitly asks to change them.
 
 ## Working Path
 
 - Start from `/Users/rody/Local Sites/wpgridoverlay/app/public/wp-content`.
-- Keep plugin code under `plugins/wp-grid-overlay/`.
-- Put Codex skill files under `plugins/wp-grid-overlay/skills/wp-grid-overlay/`; do not mix runtime plugin code into the skill folder.
-- If the plugin is still empty, create the normal plugin entry file at `plugins/wp-grid-overlay/wp-grid-overlay.php` before adding assets.
+- Keep plugin code under `plugins/grid-overlay/`.
+- Put Codex skill files under `plugins/grid-overlay/skills/grid-overlay/`; do not mix runtime plugin code into the skill folder.
+- If the plugin is still empty, create the normal plugin entry file at `plugins/grid-overlay/grid-overlay.php` before adding assets.
 
 ## Required Plugin Structure
 
 Create and maintain this baseline structure for new plugin work:
 
 ```text
-wp-grid-overlay/
-  wp-grid-overlay.php
+grid-overlay/
+  grid-overlay.php
   includes/
   assets/
   languages/
@@ -31,7 +31,7 @@ wp-grid-overlay/
   .gitignore
 ```
 
-- `wp-grid-overlay.php` must contain the WordPress plugin header, an `ABSPATH` guard, plugin constants, and only lightweight bootstrapping.
+- `grid-overlay.php` must contain the WordPress plugin header, an `ABSPATH` guard, plugin constants, and only lightweight bootstrapping.
 - `includes/` holds PHP classes, functions, admin modules, front-end modules, and integration code once the plugin grows.
 - `assets/` holds front-end and admin CSS/JS/images.
 - `languages/` holds translation files and matches `Domain Path: /languages`.
@@ -39,21 +39,21 @@ wp-grid-overlay/
 
 ## Implementation Workflow
 
-1. Inspect the plugin directory first with `rg --files plugins/wp-grid-overlay` or `find plugins/wp-grid-overlay -maxdepth 3 -type f`.
+1. Inspect the plugin directory first with `rg --files plugins/grid-overlay` or `find plugins/grid-overlay -maxdepth 3 -type f`.
 2. Identify whether the task affects runtime PHP, front-end CSS/JS, admin settings, or Codex skill/plugin metadata.
 3. Keep runtime changes scoped to the WordPress plugin folder. Avoid editing `wp-admin`, `wp-includes`, bundled WordPress files, or active themes unless asked.
 4. Use WordPress hooks, filters, APIs, and enqueue functions instead of hacks, direct core changes, or large inline assets.
 5. Prefer simple, WordPress-conform code over abstract enterprise patterns.
 6. Prefer small, readable files over a single growing plugin file once behavior expands.
 7. Add activation, deactivation, or uninstall code only when the feature genuinely needs setup, teardown, or cleanup.
-8. For a new or missing plugin structure, create `wp-grid-overlay.php`, `includes/`, `assets/`, `languages/`, `composer.json`, `phpcs.xml.dist`, and `.gitignore` in the plugin root by default.
+8. For a new or missing plugin structure, create `grid-overlay.php`, `includes/`, `assets/`, `languages/`, `composer.json`, `phpcs.xml.dist`, and `.gitignore` in the plugin root by default.
 9. Verify PHP syntax, WPCS compliance when tooling exists, and any available test runner before finishing. If no automated test runner exists, say what manual WordPress checks remain.
 
 ## Plugin Conventions
 
-- Use the text domain `wp-grid-overlay`.
-- Make all user-facing strings translatable with the `wp-grid-overlay` text domain.
-- Prefix functions, classes, hooks, handles, options, and nonces with `wpgo_`, `WPGO_`, or `wp-grid-overlay` to avoid collisions.
+- Use the text domain `grid-overlay`.
+- Make all user-facing strings translatable with the `grid-overlay` text domain.
+- Prefix functions, classes, hooks, handles, options, and nonces with `wpgo_`, `WPGO_`, or `grid-overlay` to avoid collisions.
 - Give files, classes, and functional parts names that match their responsibility.
 - Use `plugins_url()` or `plugin_dir_url()` for asset URLs and `plugin_dir_path()` for local includes.
 - Register public assets on `wp_enqueue_scripts`; register admin assets on `admin_enqueue_scripts`.
@@ -66,10 +66,10 @@ wp-grid-overlay/
 
 ## Tooling Files
 
-Keep these control files in `plugins/wp-grid-overlay/` unless the user asks for a different project layout:
+Keep these control files in `plugins/grid-overlay/` unless the user asks for a different project layout:
 
 - `composer.json`: include `dealerdirect/phpcodesniffer-composer-installer`, `wp-coding-standards/wpcs`, and `phpcompatibility/phpcompatibility-wp` as dev dependencies; add `"lint": "phpcs"` and `"lint:fix": "phpcbf"` scripts.
-- `phpcs.xml.dist`: scan the plugin root with `WordPress-Core`, `WordPress-Docs`, `WordPress-Extra`, and `PHPCompatibilityWP`; exclude `vendor/`, `node_modules/`, `skills/`, and `.codex-plugin/`; enforce PHP `7.4-`, the `wp-grid-overlay` text domain, and `wpgo`/`WPGO` prefixes.
+- `phpcs.xml.dist`: scan the plugin root with `WordPress-Core`, `WordPress-Docs`, `WordPress-Extra`, and `PHPCompatibilityWP`; exclude `vendor/`, `node_modules/`, `skills/`, and `.codex-plugin/`; enforce PHP `7.4-`, the `grid-overlay` text domain, and `wpgo`/`WPGO` prefixes.
 - `.gitignore`: ignore generated dependency folders, local editor metadata, lock files if this plugin is not committing dependency locks, logs, and temporary files.
 
 When these files already exist, update them instead of replacing unrelated user choices.
@@ -88,7 +88,7 @@ When generating new plugin code or larger changes:
 Use this shape for new WordPress plugin requests, then adapt the plugin name, slug, text domain, features, and paths to the user's actual project:
 
 ```text
-Use $wp-grid-overlay to create a WordPress plugin named "Rody Custom Admin Tools".
+Use $grid-overlay to create a WordPress plugin named "Rody Custom Admin Tools".
 
 Requirements:
 - Use WordPress Coding Standards.
@@ -105,8 +105,8 @@ Requirements:
 
 For this plugin, replace example values with:
 
-- Plugin name: `WP Grid Overlay`
-- Plugin slug and text domain: `wp-grid-overlay`
+- Plugin name: `Grid Overlay`
+- Plugin slug and text domain: `grid-overlay`
 - Function prefix: `wpgo_`
 - Class prefix: `WPGO_`
 
@@ -125,7 +125,7 @@ When implementing grid overlay UI:
 Run the narrowest useful checks for the files changed:
 
 ```bash
-php -l plugins/wp-grid-overlay/wp-grid-overlay.php
+php -l plugins/grid-overlay/grid-overlay.php
 ```
 
 If more PHP files are added, lint each changed PHP file. When WPCS tooling is available, run the configured PHPCS command, usually through Composer.

@@ -1,7 +1,7 @@
 {
-  "name": "wp-grid-overlay",
+  "name": "grid-overlay",
   "version": "[TODO: 1.2.0]",
-  "description": "Codex support for building and maintaining the WP Grid Overlay WordPress plugin.",
+  "description": "Codex support for building and maintaining the Grid Overlay WordPress plugin.",
   "author": {
     "name": "[TODO: Author Name]",
     "email": "[TODO: author@example.com]",
@@ -19,9 +19,9 @@
   "mcpServers": "[TODO: ./.mcp.json]",
   "apps": "[TODO: ./.app.json]",
   "interface": {
-    "displayName": "WP Grid Overlay",
+    "displayName": "Grid Overlay",
     "shortDescription": "Build and maintain the grid overlay plugin",
-    "longDescription": "Codex workflows for implementing, reviewing, and debugging the WP Grid Overlay WordPress plugin.",
+    "longDescription": "Codex workflows for implementing, reviewing, and debugging the Grid Overlay WordPress plugin.",
     "developerName": "[TODO: OpenAI]",
     "category": "Development",
     "capabilities": [
@@ -32,9 +32,9 @@
     "privacyPolicyURL": "[TODO: https://openai.com/policies/row-privacy-policy/]",
     "termsOfServiceURL": "[TODO: https://openai.com/policies/row-terms-of-use/]",
     "defaultPrompt": [
-      "Use $wp-grid-overlay to implement a WP Grid Overlay plugin change.",
-      "Use $wp-grid-overlay to review the grid overlay plugin for WordPress issues.",
-      "Use $wp-grid-overlay to debug front-end overlay behavior in the Local WordPress site."
+      "Use $grid-overlay to implement a Grid Overlay plugin change.",
+      "Use $grid-overlay to review the grid overlay plugin for WordPress issues.",
+      "Use $grid-overlay to debug front-end overlay behavior in the Local WordPress site."
     ],
     "brandColor": "#3B82F6",
     "composerIcon": "[TODO: ./assets/icon.png]",

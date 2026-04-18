@@ -1,17 +1,17 @@
 <?php
 /**
- * Plugin Name: Grid Overlay for WP
+ * Plugin Name: Grid Overlay
  * Description: Adds a responsive grid overlay to help check WordPress layouts during development.
  * Version: 1.0.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Rody van de Kar
- * Text Domain: wp-grid-overlay
+ * Text Domain: grid-overlay
  * Domain Path: /languages
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
- * @package WPGridOverlay
+ * @package GridOverlay
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
