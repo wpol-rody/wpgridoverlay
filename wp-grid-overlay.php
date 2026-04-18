@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Grid Overlay
+ * Plugin Name: Grid Overlay for WP
  * Description: Adds a responsive grid overlay to help check WordPress layouts during development.
  * Version: 1.0.0
  * Requires at least: 6.0
