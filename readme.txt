@@ -28,7 +28,7 @@ Tablet settings apply from 480px through 1024px. Mobile settings apply up to 479
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/grid-overlay/` directory, or install the plugin through the WordPress plugins screen.
+1. Upload the plugin files to the `/wp-content/plugins/layout-grid-overlay/` directory, or install the plugin through the WordPress plugins screen.
 2. Activate the plugin through the Plugins screen in WordPress.
 3. Go to Settings > Grid Overlay for WP to configure the overlay.
 

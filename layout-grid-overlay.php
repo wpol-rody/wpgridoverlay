@@ -6,7 +6,7 @@
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Rody van de Kar
- * Text Domain: grid-overlay
+ * Text Domain: layout-grid-overlay
  * Domain Path: /languages
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
