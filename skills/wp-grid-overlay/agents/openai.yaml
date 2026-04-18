@@ -1,4 +1,4 @@
 interface:
-  display_name: "WP Grid Overlay"
+  display_name: "Grid Overlay for WP"
   short_description: "Build and maintain the WP grid overlay plugin"
-  default_prompt: "Use $wp-grid-overlay to create a WordPress plugin with a proper plugin header, Settings API admin page, WPCS tooling, nonce and capability checks, translated strings, a file-structure-first response, and a final self-check for WPCS, escaping, sanitizing, nonces, capabilities, and i18n."
+  default_prompt: "Use $layout-grid-overlay to create a WordPress plugin with a proper plugin header, Settings API admin page, WPCS tooling, nonce and capability checks, translated strings, a file-structure-first response, and a final self-check for WPCS, escaping, sanitizing, nonces, capabilities, and i18n."

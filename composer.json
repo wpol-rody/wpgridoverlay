@@ -1,5 +1,5 @@
 {
-  "name": "rody/wp-grid-overlay",
+  "name": "rody/layout-grid-overlay",
   "description": "A WordPress plugin for showing a development grid overlay.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
@@ -12,6 +12,7 @@
     "wp-coding-standards/wpcs": "^3.0"
   },
   "scripts": {
+    "dist": "rm -rf /tmp/layout-grid-overlay-dist && mkdir -p /tmp/layout-grid-overlay-dist \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin\" && rsync -a --exclude-from=.distignore ./ /tmp/layout-grid-overlay-dist/layout-grid-overlay/ && (cd /tmp/layout-grid-overlay-dist && zip -qr \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/layout-grid-overlay.zip\" layout-grid-overlay) && unzip -l \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/layout-grid-overlay.zip\"",
     "lint": "phpcs",
     "lint:fix": "phpcbf"
   },

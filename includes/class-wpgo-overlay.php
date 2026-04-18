@@ -2,7 +2,7 @@
 /**
  * Front-end grid overlay.
  *
- * @package WPGridOverlay
+ * @package GridOverlay
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
