@@ -10,6 +10,10 @@
 	pointer-events: none;
 }
 
+.wpgo-overlay--hidden {
+	display: none;
+}
+
 .wpgo-overlay__grid {
 	--wpgo-columns: var(--wpgo-desktop-columns);
 	--wpgo-gap: var(--wpgo-desktop-gap);

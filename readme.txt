@@ -1,10 +1,10 @@
-=== Grid Overlay for WP ===
-Contributors: rodyvdkar
+=== Gridly Design Overlay ===
+Contributors: gofwp
 Tags: development, developer-tools, grid, layout, responsive
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Adds a responsive grid overlay to help check WordPress layouts during developmen
 
 == Description ==
 
-Grid Overlay for WP adds a front-end grid overlay that helps developers and site builders check responsive layout alignment while working on WordPress sites.
+Gridly Design Overlay adds a front-end grid overlay that helps developers and site builders check responsive layout alignment while working on WordPress sites.
 
 The plugin includes a settings page under Settings where administrators can configure:
 
@@ -28,9 +28,9 @@ Tablet settings apply from 480px through 1024px. Mobile settings apply up to 479
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/layout-grid-overlay/` directory, or install the plugin through the WordPress plugins screen.
+1. Upload the plugin files to the `/wp-content/plugins/gridly-design-overlay/` directory, or install the plugin through the WordPress plugins screen.
 2. Activate the plugin through the Plugins screen in WordPress.
-3. Go to Settings > Grid Overlay for WP to configure the overlay.
+3. Go to Settings > Gridly Design Overlay to configure the overlay.
 
 == Frequently Asked Questions ==
 
@@ -47,6 +47,27 @@ No. The overlay uses `pointer-events: none`, so it does not block normal page in
 Yes. The settings page includes separate desktop, tablet, and mobile grid values.
 
 == Changelog ==
+
+= 1.0.6 =
+
+* Added a front-end admin bar toggle that switches the grid overlay on and off without reloading the page.
+
+= 1.0.4 =
+
+* Renamed the plugin to Gridly Design Overlay and aligned the slug, text domain, and contributor metadata.
+
+= 1.0.3 =
+
+* Rebuilt the plugin package for resubmission.
+
+= 1.0.2 =
+
+* Rebuilt the export with the approved plugin slug and text domain.
+
+= 1.0.1 =
+
+* Renamed the plugin to avoid restricted plugin directory terms.
+* Kept the text domain aligned with the plugin slug.
 
 = 1.0.0 =
 
