@@ -8,6 +8,8 @@
 .codex-plugin/
 skills/
 AGENTS.md
+.claude/
+CLAUDE.md
 
 # Development tooling.
 composer.json
