@@ -32,6 +32,22 @@
 	width: 120px;
 }
 
+.wpgo-settings .wpgo-range-control {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	max-width: 360px;
+}
+
+.wpgo-settings .wpgo-range-control input[type="range"] {
+	flex: 1;
+}
+
+.wpgo-settings .wpgo-range-control output {
+	min-width: 42px;
+	font-variant-numeric: tabular-nums;
+}
+
 .wpgo-settings input[type="color"] {
 	width: 64px;
 	height: 36px;

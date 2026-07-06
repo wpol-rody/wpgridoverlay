@@ -65,6 +65,14 @@ class WPGO_Settings_Page {
 			array(),
 			WPGO_VERSION
 		);
+
+		wp_enqueue_script(
+			'wpgo-admin',
+			WPGO_PLUGIN_URL . 'assets/admin.js',
+			array(),
+			WPGO_VERSION,
+			true
+		);
 	}
 
 	/**
@@ -245,16 +253,18 @@ class WPGO_Settings_Page {
 	public static function render_overlay_opacity_field() {
 		$settings = self::get_settings();
 		?>
-		<input
-			type="number"
-			id="wpgo-overlay-opacity"
-			name="<?php echo esc_attr( self::OPTION_NAME ); ?>[overlay_opacity]"
-			value="<?php echo esc_attr( $settings['overlay_opacity'] ); ?>"
-			min="0"
-			max="100"
-			step="1"
-		/>
-		<span><?php echo esc_html__( '%', 'gridly-design-overlay' ); ?></span>
+		<div class="wpgo-range-control">
+			<input
+				type="range"
+				id="wpgo-overlay-opacity"
+				name="<?php echo esc_attr( self::OPTION_NAME ); ?>[overlay_opacity]"
+				value="<?php echo esc_attr( $settings['overlay_opacity'] ); ?>"
+				min="0"
+				max="100"
+				step="1"
+			/>
+			<output for="wpgo-overlay-opacity"><?php echo esc_html( $settings['overlay_opacity'] ); ?>%</output>
+		</div>
 		<?php
 	}
 
