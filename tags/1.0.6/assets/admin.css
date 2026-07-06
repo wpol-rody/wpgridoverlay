@@ -1,0 +1,39 @@
+.wpgo-settings {
+	max-width: 960px;
+}
+
+.wpgo-settings form {
+	margin-top: 20px;
+}
+
+.wpgo-settings h2 {
+	margin-top: 28px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.wpgo-settings .form-table {
+	margin-top: 12px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.wpgo-settings .form-table th {
+	width: 220px;
+	padding-left: 20px;
+}
+
+.wpgo-settings .form-table td {
+	padding-right: 20px;
+}
+
+.wpgo-settings input[type="number"] {
+	width: 120px;
+}
+
+.wpgo-settings input[type="color"] {
+	width: 64px;
+	height: 36px;
+	padding: 2px;
+}
