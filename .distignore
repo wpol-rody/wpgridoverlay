@@ -15,6 +15,8 @@ CLAUDE.md
 composer.json
 composer.lock
 phpcs.xml.dist
+scripts/
+RELEASE.md
 vendor/
 node_modules/
 
