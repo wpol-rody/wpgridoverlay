@@ -4,7 +4,7 @@ Tags: development, developer-tools, grid, layout, responsive
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,10 @@ No. The overlay uses `pointer-events: none`, so it does not block normal page in
 Yes. The settings page includes separate desktop, tablet, and mobile grid values.
 
 == Changelog ==
+
+= 1.0.8 =
+
+* Added a live per-device grid preview to the settings page.
 
 = 1.0.7 =
 
