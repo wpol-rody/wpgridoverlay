@@ -12,9 +12,11 @@
     "wp-coding-standards/wpcs": "^3.0"
   },
   "scripts": {
-    "dist": "rm -rf /tmp/gridly-design-overlay-dist && mkdir -p /tmp/gridly-design-overlay-dist \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin\" && rsync -a --exclude-from=.distignore ./ /tmp/gridly-design-overlay-dist/gridly-design-overlay/ && (cd /tmp/gridly-design-overlay-dist && zip -qr \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\" gridly-design-overlay) && unzip -l \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\"",
-    "install-local": "composer run dist && rm -rf ../plugins/layout-grid-overlay ../plugins/gridly-design-overlay && unzip -q -o \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\" -d ../plugins",
-    "activate-local": "wp plugin activate gridly-design-overlay --path=../..",
+    "dist": "rm -rf /tmp/gridly-design-overlay-dist && mkdir -p /tmp/gridly-design-overlay-dist \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin\" && rsync -a --exclude-from=.distignore ./ /tmp/gridly-design-overlay-dist/gridly-design-overlay/ && (cd /tmp/gridly-design-overlay-dist && zip -qr \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\" gridly-design-overlay) && cp \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\" \"/Users/rody/Local Sites/wpgridoverlay/app/public/wp-content/gridly-design-overlay.zip\" && unzip -l \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\"",
+    "release": "bash scripts/release.sh",
+    "release:check": "bash scripts/release-check.sh",
+    "install-local": "composer run dist && rm -rf \"/Users/rody/Local Sites/wpgridoverlay/app/public/wp-content/plugins/layout-grid-overlay\" \"/Users/rody/Local Sites/wpgridoverlay/app/public/wp-content/plugins/gridly-design-overlay\" && unzip -q -o \"/Users/rody/Desktop/Rody/rodyvdkar.nl/Overlay plugin/gridly-design-overlay.zip\" -d \"/Users/rody/Local Sites/wpgridoverlay/app/public/wp-content/plugins\"",
+    "activate-local": "wp plugin activate gridly-design-overlay --path=\"/Users/rody/Local Sites/wpgridoverlay/app/public\"",
     "lint": "phpcs",
     "lint:fix": "phpcbf"
   },

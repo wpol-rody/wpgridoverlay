@@ -8,11 +8,15 @@
 .codex-plugin/
 skills/
 AGENTS.md
+.claude/
+CLAUDE.md
 
 # Development tooling.
 composer.json
 composer.lock
 phpcs.xml.dist
+scripts/
+RELEASE.md
 vendor/
 node_modules/
 

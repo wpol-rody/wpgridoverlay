@@ -32,8 +32,68 @@
 	width: 120px;
 }
 
+.wpgo-settings .wpgo-range-control {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	max-width: 360px;
+}
+
+.wpgo-settings .wpgo-range-control input[type="range"] {
+	flex: 1;
+}
+
+.wpgo-settings .wpgo-range-control output {
+	min-width: 42px;
+	font-variant-numeric: tabular-nums;
+}
+
 .wpgo-settings input[type="color"] {
 	width: 64px;
 	height: 36px;
 	padding: 2px;
+}
+
+.wpgo-settings .wpgo-preview {
+	margin: 4px 0 16px;
+}
+
+.wpgo-settings .wpgo-preview__label {
+	margin: 0 0 6px;
+	font-size: 12px;
+	color: #646970;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.wpgo-settings .wpgo-preview__viewport {
+	box-sizing: border-box;
+	width: 260px;
+	height: 140px;
+	overflow: hidden;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.wpgo-settings .wpgo-preview__grid {
+	--wpgo-preview-columns: 1;
+	--wpgo-preview-gap: 0px;
+	--wpgo-preview-spacing: 0px;
+	--wpgo-preview-fill: rgba(255, 0, 0, 0.3);
+	--wpgo-preview-column-width: calc((100% - ((var(--wpgo-preview-columns) - 1) * var(--wpgo-preview-gap))) / var(--wpgo-preview-columns));
+
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 0 var(--wpgo-preview-spacing);
+	background-image: repeating-linear-gradient(
+		to right,
+		var(--wpgo-preview-fill) 0,
+		var(--wpgo-preview-fill) var(--wpgo-preview-column-width),
+		transparent var(--wpgo-preview-column-width),
+		transparent calc(var(--wpgo-preview-column-width) + var(--wpgo-preview-gap))
+	);
+	background-origin: content-box;
+	background-clip: content-box;
 }

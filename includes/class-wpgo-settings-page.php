@@ -65,6 +65,14 @@ class WPGO_Settings_Page {
 			array(),
 			WPGO_VERSION
 		);
+
+		wp_enqueue_script(
+			'wpgo-admin',
+			WPGO_PLUGIN_URL . 'assets/admin.js',
+			array(),
+			WPGO_VERSION,
+			true
+		);
 	}
 
 	/**
@@ -118,7 +126,7 @@ class WPGO_Settings_Page {
 			add_settings_section(
 				$section_id,
 				esc_html( $group_label ),
-				'__return_empty_string',
+				array( __CLASS__, 'render_group_preview' ),
 				'gridly-design-overlay'
 			);
 
@@ -245,16 +253,39 @@ class WPGO_Settings_Page {
 	public static function render_overlay_opacity_field() {
 		$settings = self::get_settings();
 		?>
-		<input
-			type="number"
-			id="wpgo-overlay-opacity"
-			name="<?php echo esc_attr( self::OPTION_NAME ); ?>[overlay_opacity]"
-			value="<?php echo esc_attr( $settings['overlay_opacity'] ); ?>"
-			min="0"
-			max="100"
-			step="1"
-		/>
-		<span><?php echo esc_html__( '%', 'gridly-design-overlay' ); ?></span>
+		<div class="wpgo-range-control">
+			<input
+				type="range"
+				id="wpgo-overlay-opacity"
+				name="<?php echo esc_attr( self::OPTION_NAME ); ?>[overlay_opacity]"
+				value="<?php echo esc_attr( $settings['overlay_opacity'] ); ?>"
+				min="0"
+				max="100"
+				step="1"
+			/>
+			<output for="wpgo-overlay-opacity"><?php echo esc_html( $settings['overlay_opacity'] ); ?>%</output>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Render the live grid preview canvas for a responsive group.
+	 *
+	 * @param array $args Section arguments from the Settings API, including 'id'.
+	 */
+	public static function render_group_preview( $args ) {
+		$group_key = str_replace( array( 'wpgo_', '_section' ), '', $args['id'] );
+
+		if ( ! array_key_exists( $group_key, self::get_groups() ) ) {
+			return;
+		}
+		?>
+		<div class="wpgo-preview" data-wpgo-preview="<?php echo esc_attr( $group_key ); ?>">
+			<p class="wpgo-preview__label"><?php echo esc_html__( 'Live preview', 'gridly-design-overlay' ); ?></p>
+			<div class="wpgo-preview__viewport">
+				<div class="wpgo-preview__grid"></div>
+			</div>
+		</div>
 		<?php
 	}
 

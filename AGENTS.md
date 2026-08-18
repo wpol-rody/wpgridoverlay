@@ -4,7 +4,7 @@ Guidance for AI agents working in this repository.
 
 ## Project
 
-This repository contains the `layout-grid-overlay` WordPress plugin. Build and maintain it as a small, WordPress-native plugin that follows the official WordPress Coding Standards and WordPress Plugin Handbook practices.
+This repository contains the `gridly-design-overlay` WordPress plugin. Build and maintain it as a small, WordPress-native plugin that follows the official WordPress Coding Standards and WordPress Plugin Handbook practices.
 
 ## Scope
 
@@ -18,8 +18,8 @@ This repository contains the `layout-grid-overlay` WordPress plugin. Build and m
 Maintain this structure:
 
 ```text
-layout-grid-overlay/
-  layout-grid-overlay.php
+gridly-design-overlay/
+  gridly-design-overlay.php
   includes/
   assets/
   languages/
@@ -28,7 +28,7 @@ layout-grid-overlay/
   .gitignore
 ```
 
-- `layout-grid-overlay.php`: plugin header, `ABSPATH` guard, constants, and lightweight bootstrap only.
+- `gridly-design-overlay.php`: plugin header, `ABSPATH` guard, constants, and lightweight bootstrap only.
 - `includes/`: PHP modules, classes, admin code, front-end code, integrations.
 - `assets/`: CSS, JavaScript, images, and other runtime assets.
 - `languages/`: translation files. Keep `Domain Path: /languages`.
@@ -38,8 +38,8 @@ layout-grid-overlay/
 
 - Use WordPress hooks, filters, APIs, and enqueue functions.
 - Do not modify WordPress core.
-- Use text domain `layout-grid-overlay` for all user-facing strings.
-- Prefix globals, functions, hooks, options, handles, and nonces with `wpgo_` or `layout-grid-overlay`.
+- Use text domain `gridly-design-overlay` for all user-facing strings.
+- Prefix globals, functions, hooks, options, handles, and nonces with `wpgo_` or `gridly-design-overlay`.
 - Prefix classes and constants with `WPGO_`.
 - Sanitize all input.
 - Escape all output with the narrowest appropriate WordPress escaping helper.
@@ -89,7 +89,7 @@ Report which checks ran and which checks could not run.
 When available, use the local Codex skill:
 
 ```text
-$layout-grid-overlay
+$gridly-design-overlay
 ```
 
 It contains the project-specific WordPress plugin builder workflow and should be kept aligned with this file.
